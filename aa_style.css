@@ -24,6 +24,8 @@ p {
     font-family: "PixelifySans";
     font-size: larger;
     font-stretch: semi-expanded;
+    margin-bottom: 1%;
+    margin-top: 5%;
 }
 
 form {
@@ -31,6 +33,21 @@ form {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-weight: lighter;
     font-size: small;
+}
+
+textarea {
+    background-color:rgb(71, 108, 12);
+    color: white;
+    border: solid white;
+    font-family: "PixelifySans";
+    resize: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    outline: none;
+    font-size: large;
+    height: 20px;
+    width: 120px;
 }
 
 #red {
@@ -70,5 +87,5 @@ button:hover {
 }
 
 .buttons {
-    margin-top: 3%;
+    margin-top: 5%;
 }

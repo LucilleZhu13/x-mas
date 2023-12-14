@@ -13,11 +13,16 @@
 }
 
 body {
+    position: fixed;
+    bottom: 0%;
+    margin: 0 auto;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: rgb(71, 108, 12);
 }
+
 
 p {
     color: rgb(255, 220, 79);
@@ -25,7 +30,7 @@ p {
     font-size: larger;
     font-stretch: semi-expanded;
     margin-bottom: 1%;
-    margin-top: 5%;
+    margin-top: 5.8%;
 }
 
 form {
@@ -48,6 +53,7 @@ textarea {
     font-size: large;
     height: 20px;
     width: 120px;
+    text-align: center;
 }
 
 #red {
@@ -89,3 +95,4 @@ button:hover {
 .buttons {
     margin-top: 5%;
 }
+

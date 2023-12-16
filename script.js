@@ -50,7 +50,7 @@ function submitForm() {
             }
         }
 
-        window.location.href = "tree.html";
+        window.location.href = "deerthink.html";
     }
     
 }

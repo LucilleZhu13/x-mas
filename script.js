@@ -16,14 +16,12 @@ function submitForm() {
     if (document.getElementById("name").value.length == 0 ){
         alert("plz fill in your name");
     }
-    if (document.getElementById("number").value.length == 0 ){
-        alert("plz fill in a number");
-    }
 
     user_name = document.getElementById("name").value;
     number = parseInt(document.getElementById("number").value);
-
-    if (isNaN(number) || number >= 100 || number <= 0) {
+    if (document.getElementById("number").value.length == 0 ){
+        alert("plz fill in a number");
+    } else if (isNaN(number) || number >= 100 || number <= 0) {
         alert("plz fill in a correct number");
     }
 }

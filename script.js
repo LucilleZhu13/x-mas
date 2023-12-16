@@ -3,6 +3,8 @@ var user_name;
 var number;
 var color;
 var thing;
+var closeness;
+var temp;
 
 function clearForm() {
     document.getElementById("name").value = "";
@@ -23,5 +25,32 @@ function submitForm() {
         alert("plz fill in a number");
     } else if (isNaN(number) || number >= 100 || number <= 0) {
         alert("plz fill in a correct number");
+    } else {
+        temp = document.getElementsByName("color");
+        color = null;
+        for (var i = 0; i < temp.length; i++) {
+            if (temp[i].checked) {
+                color = temp[i].value;
+            }
+        }
+
+        temp = document.getElementsByName("thing");
+        thing = null;
+        for (var i = 0; i < temp.length; i++) {
+            if (temp[i].checked) {
+                thing = temp[i].value;
+            }
+        }
+
+        temp = document.getElementsByName("close");
+        closeness = null;
+        for (var i = 0; i < temp.length; i++) {
+            if (temp[i].checked) {
+                closeness = temp[i].value;
+            }
+        }
+
+        window.location.href = "tree.html";
     }
+    
 }

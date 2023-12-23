@@ -87,6 +87,7 @@ function decor(){
         varList[i] = temp;
         decorHelper(list[i], varList[i]);
     }
+    buttonCreator();
 }
 
 
@@ -125,6 +126,15 @@ function decorHelper(picStr, picVar) {
     div.style.margin = "0 auto";
     div.style.left = "0";
     div.style.right = "0";
+}
 
-    
+function buttonCreator() {
+    let buttonId = document.getElementById("buttons");
+    var button = document.createElement("button");
+    button.innerHTML = "-->";
+    var style = document.createAttribute("style");
+    button.setAttributeNode(style);
+    button.style.marginLeft = "30px";
+    buttonId.appendChild(button);
+    document.getElementById("decor").disabled = true;
 }

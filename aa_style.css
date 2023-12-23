@@ -86,7 +86,7 @@ button {
 }
 
 button:hover {
-    background-color: wheat;
+    background-color: rgb(255, 211, 101);
 }
 
 .buttons {

@@ -16,6 +16,8 @@ function clearForm() {
     document.getElementById("likeform").reset()
 }
 
+
+
 function submitForm() {
     if (document.getElementById("name").value.length == 0 ){
         alert("plz fill in your name");
@@ -52,25 +54,17 @@ function submitForm() {
             }
         }
         varList = [color, thing, number%3, number%2];
-        for (var i = 0; i < 4; i++) {
+        window.location.href = "deerthink.html";
 
-            console.log(varList[i]);
-            // decorHelper(list[i], varList[i]);
+        for (var i = 0; i < 4; i++) {
+            console.log(1);
+            decorHelper(list[i], varList[i]);
         }
 
-        window.location.href = "deerthink.html";
     }
     
 }
 
-function decor() {
-    
-    for (var i = 0; i < 4; i++) {
-
-        console.log(varList[i]);
-        // decorHelper(list[i], varList[i]);
-    }
-}
 
 function decorHelper(picStr, picVar) {
     let targetId = document.getElementById("treeCanvas");

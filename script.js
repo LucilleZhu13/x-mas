@@ -81,7 +81,6 @@ function decor(){
     console.log(strContent);
     var rList = strContent.split("; ");
     for(var i = 0; i < 4; i++) {
-        console.log(rList[i].toString());
         list[i] = rList[i].split("=")[0];
         var temp = rList[i].split("=")[1];
         varList[i] = temp;

@@ -5,6 +5,8 @@ var color;
 var thing;
 var closeness;
 var temp;
+var list = ["color", "thing", "number", "number2"];
+var varList;
 
 function clearForm() {
     document.getElementById("name").value = "";
@@ -49,6 +51,12 @@ function submitForm() {
                 closeness = temp[i].value;
             }
         }
+        varList = [color, thing, number%3, number%2];
+        for (var i = 0; i < 4; i++) {
+
+            console.log(varList[i]);
+            // decorHelper(list[i], varList[i]);
+        }
 
         window.location.href = "deerthink.html";
     }
@@ -56,11 +64,41 @@ function submitForm() {
 }
 
 function decor() {
-    for (var i = 0; i < 5; i++) {
-        decorHelper
+    
+    for (var i = 0; i < 4; i++) {
+
+        console.log(varList[i]);
+        // decorHelper(list[i], varList[i]);
     }
 }
 
-function decorHelper() {
+function decorHelper(picStr, picVar) {
+    let targetId = document.getElementById("treeCanvas");
+    var zindex = 0;
+    switch(picStr.match(/^[a-z|A-Z]+/gi).toString()){
+        case "color":
+            zindex = 4;
+            break;
+        case "thing":
+            zindex = 3;
+            break;
+        case "number":
+            zindex = 2;
+            break;
+        case "number1":
+            zindex = 1;
+            break;
+    }
 
+    var div = document.createElement("div");
+    var img = document.createElement("img");
+    targetId.appendChild(div);
+    div.id = picStr + picVar;
+    div.classList = "Canvas";
+    img.height = "600";
+    img.src = "images/"+picStr+"_"+picVar+".PNG";
+    div.appendChild(img);
+    var style = document.createAttribute("style");
+    div.setAttributeNode(style);
+    div.style.zIndex = zindex;
 }

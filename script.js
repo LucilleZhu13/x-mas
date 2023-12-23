@@ -56,9 +56,11 @@ function submitForm() {
 }
 
 function decor() {
-
+    for (var i = 0; i < 5; i++) {
+        decorHelper
+    }
 }
 
-function decorHelper {
-    
+function decorHelper() {
+
 }

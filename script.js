@@ -6,7 +6,6 @@ var thing;
 var closeness;
 var temp;
 var list = ["color", "thing", "number", "number2"];
-var varList;
 
 function clearForm() {
     document.getElementById("name").value = "";
@@ -19,13 +18,13 @@ function clearForm() {
 
 
 function submitForm() {
-    if (document.getElementById("name").value.length == 0 ){
+    if (document.getElementById("name").value.length == 0) {
         alert("plz fill in your name");
     }
 
     user_name = document.getElementById("name").value;
     number = parseInt(document.getElementById("number").value);
-    if (document.getElementById("number").value.length == 0 ){
+    if (document.getElementById("number").value.length == 0) {
         alert("plz fill in a number");
     } else if (isNaN(number) || number >= 100 || number <= 0) {
         alert("plz fill in a correct number");
@@ -53,34 +52,60 @@ function submitForm() {
                 closeness = temp[i].value;
             }
         }
-        varList = [color, thing, number%3, number%2];
-        window.location.href = "deerthink.html";
 
-        for (var i = 0; i < 4; i++) {
-            console.log(1);
-            decorHelper(list[i], varList[i]);
+        varList = [color, thing, number % 3, number % 2];
+        for(var i = 0; i < 4; i++) {
+            document.cookie = list[i]+"="+ varList[i];
         }
 
+        window.location.href = "deerthink.html";
+
+        // $.ajaxSetup({
+        //     async: false
+        // });
+
+        // $.get("tree.html", function (data) {
+        //     // Assuming the response is an object with properties color, thing, and number
+        //     varList = [data.color, data.thing, data.number % 3, data.number % 2];
+        //     window.location.href = "deerthink.html";
+        // });
     }
-    
+}
+
+
+
+function decor(){
+    var varList = [];
+    console.log(document.cookie);
+    var strContent = document.cookie.substring(61, 107);
+    console.log(strContent);
+    var rList = strContent.split("; ");
+    for(var i = 0; i < 4; i++) {
+        console.log(rList[i].toString());
+        list[i] = rList[i].split("=")[0];
+        var temp = rList[i].split("=")[1];
+        varList[i] = temp;
+        decorHelper(list[i], varList[i]);
+    }
 }
 
 
 function decorHelper(picStr, picVar) {
+    console.log(1);
     let targetId = document.getElementById("treeCanvas");
     var zindex = 0;
     switch(picStr.match(/^[a-z|A-Z]+/gi).toString()){
         case "color":
-            zindex = 4;
+            zindex = 5;
             break;
         case "thing":
-            zindex = 3;
+            zindex = 4;
             break;
         case "number":
-            zindex = 2;
+            zindex = 3;
             break;
         case "number1":
-            zindex = 1;
+            zindex = 2;
             break;
     }
 
@@ -95,4 +120,11 @@ function decorHelper(picStr, picVar) {
     var style = document.createAttribute("style");
     div.setAttributeNode(style);
     div.style.zIndex = zindex;
+    div.style.position = "fixed"
+    div.style.top = "0%";
+    div.style.margin = "0 auto";
+    div.style.left = "0";
+    div.style.right = "0";
+
+    
 }

@@ -76,7 +76,7 @@ function submitForm() {
 
 function decor(){
     var varList = [];
-    var rList = [];
+    var list = [];
     console.log(document.cookie);
     var strContent = document.cookie.substring(61, document.cookie.length);
     console.log(strContent);

@@ -77,7 +77,7 @@ function submitForm() {
 function decor(){
     var varList = [];
     console.log(document.cookie);
-    var strContent = document.cookie.substring(61, 107);
+    var strContent = document.cookie.substring(61, document.cookie.length);
     console.log(strContent);
     var rList = strContent.split("; ");
     for(var i = 0; i < 4; i++) {
@@ -95,7 +95,7 @@ function decorHelper(picStr, picVar) {
     console.log(1);
     let targetId = document.getElementById("treeCanvas");
     var zindex = 0;
-    switch(picStr.match(/^[a-z|A-Z]+/gi).toString()){
+    switch(picStr){
         case "color":
             zindex = 5;
             break;

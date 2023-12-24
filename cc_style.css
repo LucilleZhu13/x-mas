@@ -22,7 +22,7 @@
 }
 
 body {
-    background-color: rgb(131, 185, 128);
+    background-color: rgb(25, 53, 83);
     text-align: center;
     align-items: center;
 }
@@ -37,6 +37,7 @@ body {
     top: 0%;
     left: 0;
     right: 0;
+    box-shadow: 0px 0px 5px 5px rgb(19, 33, 48);
 }
 
 .treePic {

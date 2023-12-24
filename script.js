@@ -78,6 +78,7 @@ function decor(){
     var varList = [];
     var list = [];
     console.log(document.cookie);
+    var strContent = document.cookie;
     // var strContent = document.cookie.substring(61, document.cookie.length);
     // console.log(strContent);
     var rList = strContent.split("; ");

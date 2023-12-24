@@ -1,0 +1,30 @@
+@font-face {
+    font-family: "PixelifySans";
+    src: url("Font/PixelifySans.ttf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Dream";
+    src: url("Font/YuZhouBaiRiMeng.ttf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    background-color: rgb(131, 185, 128);
+    text-align: center;
+    align-items: center;
+}
+
+.cardbg {
+    background-color: antiquewhite;
+    width: 600px;
+    height: 800px;
+    position: fixed;
+    margin: 0 auto;
+    top: 0%;
+    left: 0;
+    right: 0;
+}

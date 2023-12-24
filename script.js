@@ -78,9 +78,11 @@ function decor(){
     var varList = [];
     var list = [];
     console.log(document.cookie);
-    var strContent = document.cookie;
-    // var strContent = document.cookie.substring(61, document.cookie.length);
-    // console.log(strContent);
+    // github version
+    // var strContent = document.cookie;
+
+    // go live version
+    var strContent = document.cookie.substring(61, document.cookie.length);
     var rList = strContent.split("; ");
     for(var i = 0; i < 4; i++) {
         list[i] = rList[i].split("=")[0];
@@ -137,4 +139,71 @@ function buttonCreator() {
     button.style.marginLeft = "30px";
     buttonId.appendChild(button);
     document.getElementById("decor").disabled = true;
+    button.onclick = function() {
+        cardCreator();
+    }
+    
+}
+
+
+function cardCreator(){
+    console.log("Entering cardCreator");
+    window.location.open = "XmasCard.html";
+    decor1();
+}
+
+function decor1(){
+    console.log("Entering decor1");
+    var varList = [];
+    var list = [];
+    console.log(document.cookie);
+    // github version
+    // var strContent = document.cookie;
+
+    // go live version
+    var strContent = document.cookie.substring(61, document.cookie.length);
+    var rList = strContent.split("; ");
+    for(var i = 0; i < 4; i++) {
+        list[i] = rList[i].split("=")[0];
+        var temp = rList[i].split("=")[1];
+        varList[i] = temp;
+        decorHelper1(list[i], varList[i]);
+    }
+}
+
+
+function decorHelper1(picStr, picVar) {
+    let targetId = document.getElementById("XmasTreeCanvas");
+    var zindex = 0;
+    switch(picStr){
+        case "color":
+            zindex = 5;
+            break;
+        case "thing":
+            zindex = 4;
+            break;
+        case "number":
+            zindex = 3;
+            break;
+        case "number1":
+            zindex = 2;
+            break;
+    }
+
+    var Treediv = document.createElement("div");
+    var img = document.createElement("img");
+    targetId.appendChild(Treediv);
+    Treediv.id = picStr + picVar;
+    Treediv.classList = "Canvas";
+    img.height = "300";
+    img.src = "images/"+picStr+"_"+picVar+".PNG";
+    Treediv.appendChild(img);
+    var style = document.createAttribute("style");
+    Treediv.setAttributeNode(style);
+    Treediv.style.zIndex = zindex;
+    Treediv.style.position = "fixed"
+    Treediv.style.top = "0%";
+    Treediv.style.margin = "0 auto";
+    Treediv.style.left = "0";
+    Treediv.style.right = "0";
 }

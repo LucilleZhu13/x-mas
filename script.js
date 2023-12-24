@@ -25,35 +25,39 @@ function submitForm() {
 
     user_name = document.getElementById("name").value;
     number = parseInt(document.getElementById("number").value);
+
+    temp = document.getElementsByName("color");
+    color = null;
+    for (var i = 0; i < temp.length; i++) {
+        if (temp[i].checked) {
+            color = temp[i].value;
+        }
+    }
+
+    temp = document.getElementsByName("thing");
+    thing = null;
+    for (var i = 0; i < temp.length; i++) {
+        if (temp[i].checked) {
+            thing = temp[i].value;
+        }
+    }
+
+    temp = document.getElementsByName("close");
+    closeness = null;
+    for (var i = 0; i < temp.length; i++) {
+        if (temp[i].checked) {
+            closeness = temp[i].value;
+        }
+    }
+
+    
     if (document.getElementById("number").value.length == 0) {
         alert("plz fill in a number");
     } else if (isNaN(number) || number >= 100 || number <= 0) {
         alert("plz fill in a correct number");
+    } else if (color == null || thing == null || closeness == null) {
+        alert("Plz fill in all the questions");
     } else {
-        temp = document.getElementsByName("color");
-        color = null;
-        for (var i = 0; i < temp.length; i++) {
-            if (temp[i].checked) {
-                color = temp[i].value;
-            }
-        }
-
-        temp = document.getElementsByName("thing");
-        thing = null;
-        for (var i = 0; i < temp.length; i++) {
-            if (temp[i].checked) {
-                thing = temp[i].value;
-            }
-        }
-
-        temp = document.getElementsByName("close");
-        closeness = null;
-        for (var i = 0; i < temp.length; i++) {
-            if (temp[i].checked) {
-                closeness = temp[i].value;
-            }
-        }
-
         varList = [color, thing, number % 3, number % 2, user_name, closeness];
         for(var i = 0; i < 6; i++) {
             document.cookie = list[i]+"="+ varList[i];
@@ -83,7 +87,7 @@ function decor(){
     var strContent = document.cookie;
 
     // go live version
-    // var strContent = document.cookie.substring(61, document.cookie.length);
+    var strContent = document.cookie.substring(61, document.cookie.length);
     var rList = strContent.split("; ");
     for(var i = 0; i < 6; i++) {
         if (decorlist.includes(rList[i].split("=")[0])) {
@@ -164,7 +168,7 @@ function cardDecor() {
     var strContent = document.cookie;
 
     // go live version
-    // var strContent = document.cookie.substring(61, document.cookie.length);
+    var strContent = document.cookie.substring(61, document.cookie.length);
     var rList = strContent.split("; ");
 
     for(var i = 0; i < 6; i++) {

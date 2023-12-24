@@ -83,7 +83,7 @@ function decor(){
     var strContent = document.cookie;
 
     // go live version
-    var strContent = document.cookie.substring(61, document.cookie.length);
+    // var strContent = document.cookie.substring(61, document.cookie.length);
     var rList = strContent.split("; ");
     for(var i = 0; i < 6; i++) {
         if (decorlist.includes(rList[i].split("=")[0])) {
@@ -164,7 +164,7 @@ function cardDecor() {
     var strContent = document.cookie;
 
     // go live version
-    var strContent = document.cookie.substring(61, document.cookie.length);
+    // var strContent = document.cookie.substring(61, document.cookie.length);
     var rList = strContent.split("; ");
 
     for(var i = 0; i < 6; i++) {

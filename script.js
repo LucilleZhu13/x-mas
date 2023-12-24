@@ -225,13 +225,13 @@ function greeting(the_close, the_name) {
     titleDiv.innerHTML = "To " + the_name + ": " + "</br>" + "</br>";
     titleDiv.style.position = "fixed";
     titleDiv.style.textAlign = "left";
-    titleDiv.style.width = "500px";
+    titleDiv.style.width = "380px";
     titleDiv.style.top = "53%";
     titleDiv.style.margin = "0 auto";
     titleDiv.style.left = "0";
     titleDiv.style.right = "0";
     titleDiv.style.fontFamily = "PixelifySans";
-    titleDiv.style.fontSize = "x-large"
+    titleDiv.style.fontSize = "large"
 
 
     let paraDiv2 = document.getElementById("XmasGreetings");
@@ -239,20 +239,20 @@ function greeting(the_close, the_name) {
     paraDiv2.appendChild(greetingDiv);
     greetingDiv.style.position = "fixed";
     greetingDiv.style.textAlign = "left";
-    greetingDiv.style.width = "500px";
+    greetingDiv.style.width = "380px";
     greetingDiv.style.top = "58%";
     greetingDiv.style.margin = "0 auto";
     greetingDiv.style.left = "0";
     greetingDiv.style.right = "0";
     greetingDiv.style.fontFamily = "PixelifySans";
-    greetingDiv.style.fontSize = "large"
+    greetingDiv.style.fontSize = "medium"
     greetingDiv.style.whiteSpace = "normal";
     greetingDiv.style.lineHeight = "1.25";
     greetingDiv.innerHTML = "Merry Xmas and happy holidays! " + "</br>" + "</br>";
     if (the_name == "Eric" || the_name == "eric" || the_name == "ERIC" || the_name == "Eric Zhou") {
         greetingDiv.innerHTML += "Thank you for being my friend and all the good times we had together! I am back in Atlanta now but my trip to DC was amazing! It's a very beautiful city indeed." + "</br>" + "</br>";
         greetingDiv.innerHTML += "The campus is sooo empty and I'm still getting used to it. I really miss having people around but I guess this is certainly an experience." + "</br>" + "</br>";
-        greetingDiv.innerHTML += "Wishing you a happy and relaxing break!  (I love your cat!)";
+        greetingDiv.innerHTML += "Wishing you a happy and relaxing break!" + "</br>" + "(I love your cat!)";
     } else if (the_name == "Vapour" || the_name == "Kyle" || the_name == "Tony" || the_name == "Wilson" || the_name == "Aimee") {
         greetingDiv.innerHTML += "I miss you so so much! I wish I can meet you instead of staying in Atlanta! I miss Shenzhen and all the food."+ "</br>" + "</br>";
         greetingDiv.innerHTML += "The campus is sooo empty now and I'm still getting used to it. It's kinda weird bc it's so quite." + "</br>" + "</br>";
@@ -302,13 +302,13 @@ function greeting(the_close, the_name) {
     paraDiv3.appendChild(psDiv);
     psDiv.style.position = "fixed";
     psDiv.style.textAlign = "left";
-    psDiv.style.width = "500px";
-    psDiv.style.top = "90%";
+    psDiv.style.width = "380px";
+    psDiv.style.top = "92%";
     psDiv.style.margin = "0 auto";
     psDiv.style.left = "0";
     psDiv.style.right = "0";
     psDiv.style.fontFamily = "PixelifySans";
-    psDiv.style.fontSize = "medium"
+    psDiv.style.fontSize = "small"
     psDiv.style.whiteSpace = "normal";
     psDiv.style.lineHeight = "1.25";
 
@@ -323,13 +323,13 @@ function greeting(the_close, the_name) {
     paraDiv4.appendChild(luDiv);
     luDiv.style.position = "fixed";
     luDiv.style.textAlign = "right";
-    luDiv.style.width = "500px";
-    luDiv.style.top = "92%";
+    luDiv.style.width = "380px";
+    luDiv.style.top = "93%";
     luDiv.style.margin = "0 auto";
     luDiv.style.left = "0";
     luDiv.style.right = "0";
     luDiv.style.fontFamily = "PixelifySans";
-    luDiv.style.fontSize = "x-large"
+    luDiv.style.fontSize = "large"
     luDiv.style.whiteSpace = "normal";
     luDiv.style.lineHeight = "1.25";
 

@@ -110,7 +110,7 @@ function decorHelper(picStr, picVar) {
         case "number":
             zindex = 3;
             break;
-        case "number1":
+        case "number2":
             zindex = 2;
             break;
     }
@@ -157,7 +157,6 @@ function cardCreator(){
 function cardDecor() {
     var varList = [];
     var list = [];
-    var other = [];
     var the_name;
     var the_close;
     console.log(document.cookie);
@@ -168,8 +167,6 @@ function cardDecor() {
     var strContent = document.cookie.substring(61, document.cookie.length);
     var rList = strContent.split("; ");
 
-    console.log(document.cookie);
-   
     for(var i = 0; i < 6; i++) {
         if (decorlist.includes(rList[i].split("=")[0])) {
             list[i] = rList[i].split("=")[0];
@@ -185,37 +182,130 @@ function cardDecor() {
         var zindex = 0;
         switch(list[i]){
             case "color":
-                zindex = 5;
+                zindex = 6;
                 break;
             case "thing":
-                zindex = 4;
+                zindex = 5;
                 break;
             case "number":
+                zindex = 4;
+                break;
+            case "number2":
                 zindex = 3;
                 break;
-            case "number1":
-                zindex = 2;
-                break;
         }
+        if (varList[i] != null) {
+            // console.log(list[i]);
+            var div = document.createElement("div");
+            var img = document.createElement("img");
+            targetId.appendChild(div);
+            div.id = list[i] + varList[i];
+            img.height = "300";
+            img.src = "images/"+list[i]+"_"+varList[i]+".PNG";
+            div.appendChild(img);
+            var style = document.createAttribute("style");
+            div.setAttributeNode(style);
+            div.style.zIndex = zindex;
+            div.style.position = "fixed"
+            div.style.top = "3%";
+            div.style.margin = "0 auto";
+            div.style.left = "0";
+            div.style.right = "0";
+        }
+        
+    }
+    greeting(the_close, the_name);
 
-        var div = document.createElement("div");
-        var img = document.createElement("img");
-        targetId.appendChild(div);
-        div.id = list[i] + varList[i];
-        img.height = "300";
-        img.src = "images/"+list[i]+"_"+varList[i]+".PNG";
-        div.appendChild(img);
-        var style = document.createAttribute("style");
-        div.setAttributeNode(style);
-        div.style.zIndex = zindex;
-        div.style.position = "fixed"
-        div.style.top = "3%";
-        div.style.margin = "0 auto";
-        div.style.left = "0";
-        div.style.right = "0";
+}
+
+function greeting(the_close, the_name) {
+    let paraDiv1 = document.getElementById("XmasTitle");
+    var titleDiv = document.createElement("titleDiv");
+    paraDiv1.appendChild(titleDiv);
+    titleDiv.innerHTML = "To " + the_name + ": " + "</br>" + "</br>";
+    titleDiv.style.position = "fixed";
+    titleDiv.style.textAlign = "left";
+    titleDiv.style.width = "500px";
+    titleDiv.style.top = "53%";
+    titleDiv.style.margin = "0 auto";
+    titleDiv.style.left = "0";
+    titleDiv.style.right = "0";
+    titleDiv.style.fontFamily = "PixelifySans";
+    titleDiv.style.fontSize = "x-large"
+
+
+    let paraDiv2 = document.getElementById("XmasGreetings");
+    var greetingDiv = document.createElement("greetingDiv");
+    paraDiv2.appendChild(greetingDiv);
+    greetingDiv.style.position = "fixed";
+    greetingDiv.style.textAlign = "left";
+    greetingDiv.style.width = "500px";
+    greetingDiv.style.top = "58%";
+    greetingDiv.style.margin = "0 auto";
+    greetingDiv.style.left = "0";
+    greetingDiv.style.right = "0";
+    greetingDiv.style.fontFamily = "PixelifySans";
+    greetingDiv.style.fontSize = "large"
+    greetingDiv.style.whiteSpace = "normal";
+    greetingDiv.style.lineHeight = "1.25";
+    greetingDiv.innerHTML = "Merry Xmas and happy holidays! " + "</br>" + "</br>";
+    if (the_name == "Eric" || the_name == "eric" || the_name == "ERIC" || the_name == "Eric Zhou") {
+        greetingDiv.innerHTML += "I am back in Atlanta now but my trip to DC was amazing! It's a very beautiful city, and I had a really good time there." + "</br>" + "</br>";
+        greetingDiv.innerHTML += "The campus is sooo empty and I'm still getting used to it. I really miss having people around but I guess this is certainly an experience." + "</br>" + "</br>";
+        greetingDiv.innerHTML += "Wishing you a happy and relaxing break!  (I love your cat!)"
+    }
+
+    let paraDiv3 = document.getElementById("XmasPS");
+    var psDiv = document.createElement("psDiv");
+    paraDiv3.appendChild(psDiv);
+    psDiv.style.position = "fixed";
+    psDiv.style.textAlign = "left";
+    psDiv.style.width = "500px";
+    psDiv.style.top = "90%";
+    psDiv.style.margin = "0 auto";
+    psDiv.style.left = "0";
+    psDiv.style.right = "0";
+    psDiv.style.fontFamily = "PixelifySans";
+    psDiv.style.fontSize = "medium"
+    psDiv.style.whiteSpace = "normal";
+    psDiv.style.lineHeight = "1.25";
+
+    if (the_name == "Eric" || the_name == "eric" || the_name == "ERIC" || the_name == "Eric Zhou") {
+        psDiv.innerHTML = "P.S. check your Steam for gift ❤︎";
+    }
+
+    let paraDiv4 = document.getElementById("XmasLu");
+    var luDiv = document.createElement("luDiv");
+    paraDiv4.appendChild(luDiv);
+    luDiv.style.position = "fixed";
+    luDiv.style.textAlign = "right";
+    luDiv.style.width = "500px";
+    luDiv.style.top = "92%";
+    luDiv.style.margin = "0 auto";
+    luDiv.style.left = "0";
+    luDiv.style.right = "0";
+    luDiv.style.fontFamily = "PixelifySans";
+    luDiv.style.fontSize = "x-large"
+    luDiv.style.whiteSpace = "normal";
+    luDiv.style.lineHeight = "1.25";
+
+    switch(the_close) {
+        case "1":
+            luDiv.innerHTML = "Best regards," + "</br>" + "Lucille Zhu";
+            break;
+        case "2":
+            luDiv.innerHTML = "Best," + "</br>" + "Lucille Zhu";
+            break;
+        case "3":
+            luDiv.innerHTML = "Best wishes," + "</br>" + "Lucille Zhu";
+            break;
+        case "4":
+            luDiv.innerHTML = "Love," + "</br>" + "Lucille Zhu";
+            break;
+        case "5":
+            luDiv.innerHTML = "Yours truly," + "</br>" + "Lucille Zhu";
+            break;
     }
 
     
-
-
 }

@@ -247,7 +247,7 @@ function greeting(the_close, the_name) {
     greetingDiv.style.fontFamily = "PixelifySans";
     greetingDiv.style.fontSize = "medium"
     greetingDiv.style.whiteSpace = "normal";
-    greetingDiv.style.lineHeight = "1.25";
+    greetingDiv.style.lineHeight = "1.15";
     greetingDiv.innerHTML = "Merry Xmas and happy holidays! " + "</br>" + "</br>";
     if (the_name == "Eric" || the_name == "eric" || the_name == "ERIC" || the_name == "Eric Zhou") {
         greetingDiv.innerHTML += "Thank you for being my friend and all the good times we had together! I am back in Atlanta now but my trip to DC was amazing! It's a very beautiful city indeed." + "</br>" + "</br>";
@@ -303,7 +303,7 @@ function greeting(the_close, the_name) {
     psDiv.style.position = "fixed";
     psDiv.style.textAlign = "left";
     psDiv.style.width = "380px";
-    psDiv.style.top = "98%";
+    psDiv.style.top = "97%";
     psDiv.style.margin = "0 auto";
     psDiv.style.left = "0";
     psDiv.style.right = "0";
@@ -324,14 +324,14 @@ function greeting(the_close, the_name) {
     luDiv.style.position = "fixed";
     luDiv.style.textAlign = "right";
     luDiv.style.width = "380px";
-    luDiv.style.top = "93%";
+    luDiv.style.top = "94%";
     luDiv.style.margin = "0 auto";
     luDiv.style.left = "0";
     luDiv.style.right = "0";
     luDiv.style.fontFamily = "PixelifySans";
     luDiv.style.fontSize = "large"
     luDiv.style.whiteSpace = "normal";
-    luDiv.style.lineHeight = "1.25";
+    luDiv.style.lineHeight = "1.15";
 
     switch(the_close) {
         case "1":

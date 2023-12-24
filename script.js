@@ -83,7 +83,7 @@ function decor(){
     var strContent = document.cookie;
 
     // go live version
-    // var strContent = document.cookie.substring(61, document.cookie.length);
+    var strContent = document.cookie.substring(61, document.cookie.length);
     var rList = strContent.split("; ");
     for(var i = 0; i < 6; i++) {
         if (decorlist.includes(rList[i].split("=")[0])) {
@@ -164,7 +164,7 @@ function cardDecor() {
     var strContent = document.cookie;
 
     // go live version
-    // var strContent = document.cookie.substring(61, document.cookie.length);
+    var strContent = document.cookie.substring(61, document.cookie.length);
     var rList = strContent.split("; ");
 
     for(var i = 0; i < 6; i++) {
@@ -250,9 +250,51 @@ function greeting(the_close, the_name) {
     greetingDiv.style.lineHeight = "1.25";
     greetingDiv.innerHTML = "Merry Xmas and happy holidays! " + "</br>" + "</br>";
     if (the_name == "Eric" || the_name == "eric" || the_name == "ERIC" || the_name == "Eric Zhou") {
-        greetingDiv.innerHTML += "I am back in Atlanta now but my trip to DC was amazing! It's a very beautiful city, and I had a really good time there." + "</br>" + "</br>";
+        greetingDiv.innerHTML += "Thank you for being my friend and all the good times we had together! I am back in Atlanta now but my trip to DC was amazing! It's a very beautiful city indeed." + "</br>" + "</br>";
         greetingDiv.innerHTML += "The campus is sooo empty and I'm still getting used to it. I really miss having people around but I guess this is certainly an experience." + "</br>" + "</br>";
-        greetingDiv.innerHTML += "Wishing you a happy and relaxing break!  (I love your cat!)"
+        greetingDiv.innerHTML += "Wishing you a happy and relaxing break!  (I love your cat!)";
+    } else if (the_name == "Vapour" || the_name == "Kyle" || the_name == "Tony" || the_name == "Wilson" || the_name == "Aimee") {
+        greetingDiv.innerHTML += "I miss you so so much! I wish I can meet you instead of staying in Atlanta! I miss Shenzhen and all the food."+ "</br>" + "</br>";
+        greetingDiv.innerHTML += "The campus is sooo empty now and I'm still getting used to it. It's kinda weird bc it's so quite." + "</br>" + "</br>";
+        greetingDiv.innerHTML += "Thank you for supporting and loving me all the time! I wish you a happy and relaxing break!"
+        the_close = "5";
+    } else if (the_name == "Grace" || the_name == "Semiaris") {
+        greetingDiv.innerHTML += "I'm sooo glad I have you and soooo happy you are here with me in Atlanta. Otherwise I'm gonna be so depressed and sad."+ "</br>" + "</br>";
+        greetingDiv.innerHTML += "Thank you for being such an amazing friend! I love you and I wish you a happy and relaxing break!"+ "</br>" + "</br>";
+        greetingDiv.innerHTML += "Good luck with you driver's license! I support you mentally and physically!"
+        the_close = "5";
+    } else if (the_name == "Yolanda" || the_name == "yolanda" || the_name == "Yolanda Li") {
+        greetingDiv.innerHTML += "Thanks again for inviting me to Maryland! I had such a great time and I miss you already!"+ "</br>" + "</br>";
+        greetingDiv.innerHTML += "The campus is sooo empty now and I'm still getting used to it. I really miss having people around but I guess this is certainly an experience." + "</br>" + "</br>";
+        greetingDiv.innerHTML += "Wishing you a happy and relaxing break!";
+        the_close = "5";
+    } else if (the_name == "Alex" || the_name == "Alex Qiu" || the_name == "Frank" || the_name == "Frank Wu" || the_name == "Tom" || the_name == "Kecheng" || the_name == "Kecheng Dai" || the_name == "Ying" || the_name == "Huimin" || the_name == "Sean") {
+        greetingDiv.innerHTML += "Thank you for being a great badminton partner! I had a really good time this semester playing badminton with you!"+ "</br>" + "</br>";
+        greetingDiv.innerHTML += "None of my badminton friends are here and the CRC is closed. I really miss you all and already looking forward to playing next semester!" + "</br>" + "</br>";
+        greetingDiv.innerHTML += "Wishing you a happy and relaxing break!";
+        the_close = "4";
+    } else {
+        switch(the_close) {
+            case "1":
+                
+                break;
+            case "2":
+                greetingDiv.innerHTML += "Thank you for a great time we had together!" + "</br>" + "</br>";
+                greetingDiv.innerHTML += "I wish you a happy and relaxing break! I hope we can keep in touch.";
+                break;
+            case "3":
+                greetingDiv.innerHTML += "Thank you for a great semester and all the good times we had together! I really miss you and hope to see you soon. Plz keep in touch with me!"+ "</br>" + "</br>";
+                greetingDiv.innerHTML += "I wish you a happy and relaxing break!";
+                break;
+            case "4":
+                greetingDiv.innerHTML += "Thank you for being an amazing freind and all the good times we had together! I miss you so so much! I wish I can see you soon."+ "</br>" + "</br>";
+                greetingDiv.innerHTML += "Before that, take good care of yourself and I wish you a happy and relaxing break!"
+                break;
+            case "5":
+                greetingDiv.innerHTML += "Thank you for always supporting me and loving me! I'm sooo grateful having you as my BEST friend! I miss you so so much! I wish I can see you soon."+ "</br>" + "</br>";
+                greetingDiv.innerHTML += "Before that, take great care of yourself and I wish you a happy and relaxing break!"
+                break;
+        }
     }
 
     let paraDiv3 = document.getElementById("XmasPS");
@@ -272,6 +314,8 @@ function greeting(the_close, the_name) {
 
     if (the_name == "Eric" || the_name == "eric" || the_name == "ERIC" || the_name == "Eric Zhou") {
         psDiv.innerHTML = "P.S. check your Steam for gift ❤︎";
+    } else if (the_name == "Yolanda" || the_name == "yolanda" || the_name == "Yolanda Li") {
+        psDiv.innerHTML = "(Send 李小猫 my love ❤︎)";
     }
 
     let paraDiv4 = document.getElementById("XmasLu");

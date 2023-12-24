@@ -303,7 +303,7 @@ function greeting(the_close, the_name) {
     psDiv.style.position = "fixed";
     psDiv.style.textAlign = "left";
     psDiv.style.width = "380px";
-    psDiv.style.top = "97%";
+    psDiv.style.top = "98%";
     psDiv.style.margin = "0 auto";
     psDiv.style.left = "0";
     psDiv.style.right = "0";

@@ -79,7 +79,7 @@ function decor(){
     var list = [];
     console.log(document.cookie);
     // var strContent = document.cookie.substring(61, document.cookie.length);
-    console.log(strContent);
+    // console.log(strContent);
     var rList = strContent.split("; ");
     for(var i = 0; i < 4; i++) {
         list[i] = rList[i].split("=")[0];

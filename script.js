@@ -5,7 +5,8 @@ var color;
 var thing;
 var closeness;
 var temp;
-var list = ["color", "thing", "number", "number2"];
+var list = ["color", "thing", "number", "number2", "name", "close"];
+var decorlist = ["color", "thing", "number", "number2"];
 
 function clearForm() {
     document.getElementById("name").value = "";
@@ -53,8 +54,8 @@ function submitForm() {
             }
         }
 
-        varList = [color, thing, number % 3, number % 2];
-        for(var i = 0; i < 4; i++) {
+        varList = [color, thing, number % 3, number % 2, user_name, closeness];
+        for(var i = 0; i < 6; i++) {
             document.cookie = list[i]+"="+ varList[i];
         }
 
@@ -84,11 +85,13 @@ function decor(){
     // go live version
     var strContent = document.cookie.substring(61, document.cookie.length);
     var rList = strContent.split("; ");
-    for(var i = 0; i < 4; i++) {
-        list[i] = rList[i].split("=")[0];
-        var temp = rList[i].split("=")[1];
-        varList[i] = temp;
-        decorHelper(list[i], varList[i]);
+    for(var i = 0; i < 6; i++) {
+        if (decorlist.includes(rList[i].split("=")[0])) {
+            list[i] = rList[i].split("=")[0];
+            var temp = rList[i].split("=")[1];
+            varList[i] = temp;
+            decorHelper(list[i], varList[i]);
+        }
     }
     buttonCreator();
 }
@@ -148,14 +151,15 @@ function buttonCreator() {
 
 function cardCreator(){
     console.log("Entering cardCreator");
-    window.location.open = "XmasCard.html";
-    decor1();
+    window.location.href = "XmasCard.html";
 }
 
-function decor1(){
-    console.log("Entering decor1");
+function cardDecor() {
     var varList = [];
     var list = [];
+    var other = [];
+    var the_name;
+    var the_close;
     console.log(document.cookie);
     // github version
     // var strContent = document.cookie;
@@ -163,47 +167,55 @@ function decor1(){
     // go live version
     var strContent = document.cookie.substring(61, document.cookie.length);
     var rList = strContent.split("; ");
-    for(var i = 0; i < 4; i++) {
-        list[i] = rList[i].split("=")[0];
-        var temp = rList[i].split("=")[1];
-        varList[i] = temp;
-        decorHelper1(list[i], varList[i]);
+
+    console.log(document.cookie);
+   
+    for(var i = 0; i < 6; i++) {
+        if (decorlist.includes(rList[i].split("=")[0])) {
+            list[i] = rList[i].split("=")[0];
+            var temp = rList[i].split("=")[1];
+            varList[i] = temp;
+        } else if (rList[i].split("=")[0] == "name"){
+            the_name = rList[i].split("=")[1];
+        } else {
+            the_close = rList[i].split("=")[1];
+        }
+
+        let targetId = document.getElementById("Canvas");
+        var zindex = 0;
+        switch(list[i]){
+            case "color":
+                zindex = 5;
+                break;
+            case "thing":
+                zindex = 4;
+                break;
+            case "number":
+                zindex = 3;
+                break;
+            case "number1":
+                zindex = 2;
+                break;
+        }
+
+        var div = document.createElement("div");
+        var img = document.createElement("img");
+        targetId.appendChild(div);
+        div.id = list[i] + varList[i];
+        img.height = "300";
+        img.src = "images/"+list[i]+"_"+varList[i]+".PNG";
+        div.appendChild(img);
+        var style = document.createAttribute("style");
+        div.setAttributeNode(style);
+        div.style.zIndex = zindex;
+        div.style.position = "fixed"
+        div.style.top = "3%";
+        div.style.margin = "0 auto";
+        div.style.left = "0";
+        div.style.right = "0";
     }
-}
+
+    
 
 
-function decorHelper1(picStr, picVar) {
-    let targetId = document.getElementById("XmasTreeCanvas");
-    var zindex = 0;
-    switch(picStr){
-        case "color":
-            zindex = 5;
-            break;
-        case "thing":
-            zindex = 4;
-            break;
-        case "number":
-            zindex = 3;
-            break;
-        case "number1":
-            zindex = 2;
-            break;
-    }
-
-    var Treediv = document.createElement("div");
-    var img = document.createElement("img");
-    targetId.appendChild(Treediv);
-    Treediv.id = picStr + picVar;
-    Treediv.classList = "Canvas";
-    img.height = "300";
-    img.src = "images/"+picStr+"_"+picVar+".PNG";
-    Treediv.appendChild(img);
-    var style = document.createAttribute("style");
-    Treediv.setAttributeNode(style);
-    Treediv.style.zIndex = zindex;
-    Treediv.style.position = "fixed"
-    Treediv.style.top = "0%";
-    Treediv.style.margin = "0 auto";
-    Treediv.style.left = "0";
-    Treediv.style.right = "0";
 }

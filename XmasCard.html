@@ -7,18 +7,20 @@
     <link href="cc_style.css" rel="stylesheet" type="text/css" />
     <title>Xmas Card from Lucille</title>
 </head>
-<body>
-    <div>
+<body onload="cardDecor()">
+    <div class="bodycard">
         <div class="cardbg">
-            <div>
-                <div id="XmasTreeCanvas" class="XmasTreeCanvas" style="z-index:1 ;">
+            <div class="basicTree" id="Canvas">
+                <div id="Canvas" class ="treePic" style="z-index:1 ;">
                     <img src="images/tree.PNG" height="300px"/>
-                </div>
+                <div>
             </div>
-        </div>
 
-        <div>
-            <P id="XmasGreetings"></P>
+            <div class="divider">
+            </div>
+
+            <div id="XmasGreetings">
+            </div>
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>

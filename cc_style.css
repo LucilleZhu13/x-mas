@@ -12,6 +12,15 @@
     font-style: normal;
 }
 
+.bodycard {
+    position: fixed;
+    top:0%;
+    margin: 0 auto;
+    left:0;
+    right:0;
+    z-index: 1;
+}
+
 body {
     background-color: rgb(131, 185, 128);
     text-align: center;
@@ -21,10 +30,32 @@ body {
 .cardbg {
     background-color: antiquewhite;
     width: 600px;
-    height: 800px;
+    height: 100%;
+    min-height: 800px;
     position: fixed;
     margin: 0 auto;
     top: 0%;
     left: 0;
     right: 0;
+}
+
+.treePic {
+    position: fixed;
+    top: 3%;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+
+}
+
+.divider {
+    position: fixed;
+    background-color: black;
+    height: 0.3px;
+    width: 600px;
+    top: 50%;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+
 }

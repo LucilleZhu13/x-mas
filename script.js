@@ -53,7 +53,7 @@ function submitForm() {
     
     if (document.getElementById("number").value.length == 0) {
         alert("plz fill in a number");
-    } else if (isNaN(number) || number >= 100 || number <= 0) {
+    } else if (isNaN(number) || number > 100 || number < 0) {
         alert("plz fill in a correct number");
     } else if (color == null || thing == null || closeness == null) {
         alert("Plz fill in all the questions");
@@ -253,7 +253,7 @@ function greeting(the_close, the_name) {
     greetingDiv.style.whiteSpace = "normal";
     greetingDiv.style.lineHeight = "1.15";
     greetingDiv.innerHTML = "Merry Xmas and happy holidays! " + "</br>" + "</br>";
-    if (the_name == "Eric" || the_name == "eric" || the_name == "ERIC" || the_name == "Eric Zhou") {
+    if (the_name == "Eric Zhou") {
         greetingDiv.innerHTML += "Thank you for being my friend and all the good times we had together! I am back in Atlanta now but my trip to DC was amazing! It's a very beautiful city indeed." + "</br>" + "</br>";
         greetingDiv.innerHTML += "The campus is sooo empty and I'm still getting used to it. I really miss having people around but I guess this is certainly an experience." + "</br>" + "</br>";
         greetingDiv.innerHTML += "Wishing you a happy and relaxing break!" + "</br>" + "(I love your cat!)";
@@ -272,7 +272,7 @@ function greeting(the_close, the_name) {
         greetingDiv.innerHTML += "The campus is sooo empty now and I'm still getting used to it. I really miss having people around but I guess this is certainly an experience." + "</br>" + "</br>";
         greetingDiv.innerHTML += "Wishing you a happy and relaxing break!";
         the_close = "5";
-    } else if (the_name == "Alex" || the_name == "Alex Qiu" || the_name == "Frank" || the_name == "Frank Wu" || the_name == "Tom" || the_name == "Kecheng" || the_name == "Kecheng Dai" || the_name == "Ying" || the_name == "Huimin" || the_name == "Sean") {
+    } else if (the_name == "Alex" || the_name == "Alex Qiu" || the_name == "Frank" || the_name == "Frank Wu" || the_name == "Tom" || the_name == "Kecheng" || the_name == "Kecheng Dai" || the_name == "Ying" || the_name == "Huimin" || the_name == "Sean" || the_name == "Eric Song") {
         greetingDiv.innerHTML += "Thank you for being a great badminton partner! I had a really good time this semester playing badminton with you!"+ "</br>" + "</br>";
         greetingDiv.innerHTML += "None of my badminton friends are here and the CRC is closed. I really miss you all and already looking forward to playing next semester!" + "</br>" + "</br>";
         greetingDiv.innerHTML += "Wishing you a happy and relaxing break!";
@@ -316,7 +316,7 @@ function greeting(the_close, the_name) {
     psDiv.style.whiteSpace = "normal";
     psDiv.style.lineHeight = "1.25";
 
-    if (the_name == "Eric" || the_name == "eric" || the_name == "ERIC" || the_name == "Eric Zhou") {
+    if (the_name == "Eric Zhou") {
         psDiv.innerHTML = "P.S. check your Steam for gift ❤︎";
     } else if (the_name == "Yolanda" || the_name == "yolanda" || the_name == "Yolanda Li") {
         psDiv.innerHTML = "(Send 李小猫 my love ❤︎)";

@@ -226,7 +226,7 @@ function greeting(the_close, the_name) {
     let paraDiv1 = document.getElementById("XmasTitle");
     var titleDiv = document.createElement("titleDiv");
     paraDiv1.appendChild(titleDiv);
-    titleDiv.innerHTML = "To " + the_name + ": " + "</br>" + "</br>";
+    titleDiv.innerHTML = "Dear " + the_name + ": " + "</br>" + "</br>";
     titleDiv.style.position = "fixed";
     titleDiv.style.textAlign = "left";
     titleDiv.style.width = "380px";
@@ -277,7 +277,12 @@ function greeting(the_close, the_name) {
         greetingDiv.innerHTML += "None of my badminton friends are here and the CRC is closed. I really miss you all and already looking forward to playing next semester!" + "</br>" + "</br>";
         greetingDiv.innerHTML += "Wishing you a happy and relaxing break!";
         the_close = "4";
-    } else {
+    } else if (the_name == "Rahul" || the_name == "rahul" || the_name == "Rahul Vodeb Ghosh" || the_name == "Rahul VG") {
+        greetingDiv.innerHTML += "Thank you for being an amazing boyfriend. I miss you so so much."+ "</br>" + "</br>";
+        greetingDiv.innerHTML += "I cherish every piece of memory we have together. You make my life so colorful, joyful, and full of surprise. Because of you, it's the first time in my life that I actually want the break to end sooner ：）" + "</br>" + "</br>";
+        greetingDiv.innerHTML += "Wishing you a happy and relaxing break! I can't wait to see you again!";
+        the_close = "5";
+    }else {
         switch(the_close) {
             case "1":
                 
@@ -307,19 +312,21 @@ function greeting(the_close, the_name) {
     psDiv.style.position = "fixed";
     psDiv.style.textAlign = "left";
     psDiv.style.width = "380px";
-    psDiv.style.top = "97%";
+    psDiv.style.top = "91%";
     psDiv.style.margin = "0 auto";
     psDiv.style.left = "0";
     psDiv.style.right = "0";
     psDiv.style.fontFamily = "PixelifySans";
     psDiv.style.fontSize = "small"
     psDiv.style.whiteSpace = "normal";
-    psDiv.style.lineHeight = "1.25";
+    psDiv.style.lineHeight = "1.05";
 
     if (the_name == "Eric Zhou") {
         psDiv.innerHTML = "P.S. check your Steam for gift ❤︎";
     } else if (the_name == "Yolanda" || the_name == "yolanda" || the_name == "Yolanda Li") {
         psDiv.innerHTML = "(Send 李小猫 my love ❤︎)";
+    } else if (the_name == "Rahul" || the_name == "rahul" || the_name == "Rahul Vodeb Ghosh" || the_name == "Rahul VG") {
+        psDiv.innerHTML = "(P.S. I'm still stuggling with finding you a gift but here's an actuall/digital card so I win hehe ❤︎)";
     }
 
     let paraDiv4 = document.getElementById("XmasLu");
